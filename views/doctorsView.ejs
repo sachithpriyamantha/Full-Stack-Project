@@ -1,0 +1,100 @@
+<%- include('layout/header') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #tabledata {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #tabledata td, #tabledata th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+        #tabledata tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #tabledata tr:hover {background-color: #ddd;}
+        
+        #tabledata th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: center;
+          background-color: #58afbf;
+          color: white;
+        }
+        
+        #tabledata td{
+            text-align: center;
+        }
+        
+        h2{
+        text-align: center;
+        color: #43818c;
+        padding: 10px;
+        
+        }
+            </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-lg-12">
+                <h2>DOCTORS</h2>
+                <% if (message) { %>
+                    <div class="alert alert-dismissibe fade show alert- <%= message.type %>" role="alert">
+                        <button class="btn-close" type="button" data-bs-dismiss="alert"
+                        aria-label="Close"></button>
+                        <strong><%= message.message %></strong>
+                    </div>
+                <% } %>
+    
+                <div class="table-responsive">
+                    <% if(Doctor != '') { %>
+                        <table id="tabledata">
+                            <thead>
+                                <tr> 
+                                   
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% Doctor.forEach((row, index) => { %>
+                                    <tr>
+                                       
+                                        <td><img src="<%= row.image %>" width="50" class="img-thumbnail"></td>
+                                        <td><%= row.name %></td>
+                                        <td><%= row.email %></td>
+                                        <td><%= row.phone %></td>
+                                        <td>
+                                            <a href="/editDoctor/<%= row._id %>" class="text-success"><i class="fas fa-edit fa-lg mx-1"></i></a>
+                                            
+                                            <a href="/deleteDoctor/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+                                        </td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <h1 class="text-center text-secondary mt-5">No users found in the database</h1>
+                    <% } %>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<%- include('layout/footer') %>

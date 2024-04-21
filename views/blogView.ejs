@@ -1,0 +1,34 @@
+
+<%- include('layout/header') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/userBlog.css">
+</head>
+<body>
+
+<div class="content">
+            <!-- Main Blog Section -->
+
+                                <% blog.forEach((row, index) => { %>
+                                    <div class="card">
+                                        <h3><%= row.name %></h3>
+                                        <div><img src="<%= row.image %>" width="80" class="img-thumbnail" ></div>
+                                        <div class="blog-date"><br> <%= row.desc %></div>
+                                            <div class="blog-actions">
+                                                <a href="/editBlog/<%= row._id %>" class="text-success"><i class="fas fa-edit fa-lg mx-1"></i></a>
+                                                    
+                                                <a href="/deleteBlog/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+                                            </div> 
+                                     </div>
+                                    
+                                <% }) %>
+                                </div>
+          
+</body>
+</html>
+<%- include('layout/footer') %>

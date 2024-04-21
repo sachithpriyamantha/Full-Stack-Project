@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>User Chat</title>
+  <style>
+
+.user-message {
+
+  color: rgb(30, 35, 97);
+  background-color: rgb(181, 229, 251);
+  padding: 10px;
+  width: 98%;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: right;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #a2d2ff;
+  padding: 20px;
+  color: #000000;
+  font-size: 20px;
+}
+
+h2 {
+  color: #003566;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#chat-box {
+  width: 80%;
+  height: 400px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  color: rgb(32, 91, 63);
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  padding: 10px;
+  margin: 0 auto 20px;
+  overflow-y: scroll;
+  text-align: left;
+}
+
+#message-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#message-input {
+  flex-grow: 1;
+  padding: 12px 20px;
+  border: 5px solid #ddd;
+  margin-right: 10px;
+  width: 70%;
+  margin-left: 120px;
+  border-radius: 10px;
+
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  min-width: 100px;
+  background-color: #418a9c;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+
+
+  </style>
+  
+</head>
+<body>
+  <h2>USER CHAT</h2>
+  <div id="chat-box"></div>
+
+  <input type="text" id="message-input" placeholder="Type your message">
+  
+  <button onclick="sendMessage()" style="font-size:24px"><i class="fa fa-send-o"></i></button>
+  
+
+  <script>
+  const socket = new WebSocket(`ws://${window.location.host}`);
+  const chatBox = document.getElementById('chat-box');
+  const messageInput = document.getElementById('message-input');
+
+  socket.onmessage = (event) => {
+
+    const data = JSON.parse(event.data);
+
+    const messageClass = data.sender === 'admin' ? 'admin-message' : 'user-message';
+
+    chatBox.innerHTML += `<p class="${messageClass}">${data.message}</p>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+  };
+
+  function sendMessage() {
+    const messageInput = document.getElementById('message-input');
+    const message = messageInput.value;
+    if (message.trim() !== '') {
+
+      socket.send(JSON.stringify({ sender: 'user', message }));
+      messageInput.value = '';
+    }
+  }
+
+  messageInput.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); 
+      sendMessage();
+    }
+  });
+  </script>
+  
+</body>
+</html>

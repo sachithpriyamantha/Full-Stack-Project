@@ -1,0 +1,36 @@
+<%- include('layout/userHeader') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/userService.css">
+
+</head>
+<body>
+
+<h2 id="title">OUR SERVICES</h2>
+
+    <% service.forEach((row, index) => { %>
+
+        <div class="card">
+
+           <div><img src="<%= row.image %>" width="250"  class="img-thumbnail" ></div>
+            <h3><%= row.name %></h3>
+            <div><%= row.desc %></div>
+
+            <br>
+            <div>                                   
+                <button class="btn" onclick="navigateAppoint()">Book an Service</button>
+        
+                    <script>
+                        function navigateAppoint() {
+                             window.location.href = '/add_appoint';
+                                        }
+                     </script></div>
+        </div>
+
+    <% }) %>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<%- include('layout/userHeader') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/userBlog.css">
+</head>
+<body>
+    <h2 id="title">LATEST ARTICLES</h2>
+    
+    <div class="content" >
+                        <% blog.forEach((row, index) => { %>
+                            <div class="card">
+                                <h3><%= row.name %></h3>
+                                <div><img src="<%= row.image %>" width="400" class="img-thumbnail" ></div>
+                                <div class="blog-date"><br> <%= row.desc %></div>
+                            </div>  
+                         
+                        <% }) %>
+      </div>             
+</body>
+</html>

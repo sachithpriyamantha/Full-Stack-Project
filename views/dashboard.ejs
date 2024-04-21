@@ -1,0 +1,199 @@
+<%- include('layout/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+
+<style>
+
+    #chat {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+body{
+  background-color: rgb(243, 249, 249) ;
+}
+
+.card {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 340px;
+  height: 300px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgb(226, 236, 242);
+  color: rgb(63, 69, 71); 
+}
+
+#title{
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+}
+
+h2{
+  color: #3f82b3;
+}
+
+.btn{
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.btn:hover{
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: rgb(137, 195, 226);
+  padding: 5px;
+  border-radius: 10px;
+}
+  
+</style>
+</head>
+<body>
+
+    <div class="card">
+        <h3>SERVICES</h3>
+        <div><img src="images/service.png" width="150" class="img-thumbnail" ></div>
+        <br>
+        <div>  
+            <button class="btn" onclick="serviceView()">Service view</button>
+
+         
+            <script>
+                function serviceView() {
+                    window.location.href = '/serviceView';
+                }
+            </script>
+        
+
+      
+        <button class="btn" onclick="serviceAdd()">Service Add</button>
+
+        <script>
+            function serviceAdd() {
+                window.location.href = '/add_services';
+            }
+        </script>                                    
+    </div>
+</div>
+
+
+<div class="card">
+    <h3>DOCTORS</h3>
+    <div><img src="images/doc.png" width="150"  class = "img-thumbnail" ></div>
+    <br>
+    <div>  
+       
+        <button class="btn" onclick="doctorsView()">Doctors view</button>
+
+       
+        <script>
+            function doctorsView() {
+                window.location.href = '/doctorsView';
+            }
+        </script>
+
+          
+          <button class="btn" onclick="doctorsAdd()">Doctors Add</button>
+
+         
+          <script>
+              function doctorsAdd() {
+                  window.location.href = '/add_doctors';
+              }
+          </script>                                  
+</div>
+</div>
+
+
+<div class="card">
+    <h3>ARTICLES</h3>
+    <div><img src="images/article.png" width="150" class="img-thumbnail" ></div>
+    <br>
+    <div>  
+          
+            <button class="btn" onclick="articleView()">Articles view</button>
+
+           
+            <script>
+                function articleView() {
+                    window.location.href = '/blogView';
+                }
+            </script>
+    
+             
+              <button class="btn" onclick="articleAdd()">Articles Add</button>
+    
+            
+              <script>
+                  function articleAdd() {
+                      window.location.href = '/add_blog';
+                  }
+              </script>                                 
+</div>
+</div>
+
+
+
+<div class="card">
+    <h3>STAFF</h3>
+    <div><img src="images/staff.png" width="150" class="img-thumbnail" ></div>
+    <br>
+    <div>  
+        <button class="btn" onclick="staffView()">Staff view</button>
+
+        
+        <script>
+            function staffView() {
+                window.location.href = '/staffView';
+            }
+        </script>
+        
+         
+          <button class="btn" onclick="staffAdd()">Staff Add</button>
+        
+         
+          <script>
+              function staffAdd() {
+                  window.location.href = '/add_staff';
+              }
+          </script>                      
+</div>
+</div>
+
+
+  <div id="chat" class="card">
+    <h3>CHATHUB</h3>
+    <div><img src="images/chat.png" width="150" class="img-thumbnail" ></div>
+    <br>
+    <div>  
+        <button class="btn" onclick="chatAdmin()">CHAT</button>
+        
+        <script>
+            function chatAdmin() {
+                window.location.href = '/admin', '_blank';
+
+            }
+        </script>
+
+</div>
+</div>
+
+</body>
+</html>

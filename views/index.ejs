@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!--- primary meta tags-->
+
+        <title>DentCare - home</title>
+        
+        <!-- - favicon-->
+
+        <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+        <!--- google font link-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet"/>
+        <script src="https://kit.fontawesome.com/2a66bc2625.js" crossorigin="anonymous" ;> </script>
+
+        <!--- custom css link-->
+        
+        <link rel="stylesheet" href="/css/home.css" />
+       
+        <!--- preload images-->
+        <link rel="preload" as="image" href="./assets/imgs/dentist_in_office.jpg"/>
+        <link rel="preload" as="image" href="./images1/hero-banner.png" />
+        <link rel="preload" as="image" href="./images1/hero-bg.png" />
+
+       <script>
+            function toggleDropdown() {
+              var dropdown = document.getElementById("myDropdown");
+              dropdown.classList.toggle("show");
+            }
+            
+
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+  
+    const chatIcon = document.getElementById('chat-icon');
+    chatIcon.addEventListener('click', function () {
+        
+        alert('Chat icon clicked!');
+    });
+
+                          
+});
+
+</script>
+<style>
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropbtn {
+      background-color: none;
+      color: rgb(255, 255, 255);
+      padding: 16px 50px 16px 50px;
+      font-size: 20px;
+      border: none;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #eae5e5;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #ffffff;
+      color: rgb(13, 77, 104);
+    }
+    
+    .show {
+      display: block;
+    }
+
+    
+
+.floating-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff; 
+    color: #ffffff; 
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    
+}
+
+.floating-icon:hover{
+    background-color: black ; 
+    
+}
+
+    </style>
+    
+    </head>
+
+    <body id="top">
+        
+        <!--- PRELOADER-->
+
+        <div class="preloader" data-preloader>
+            <div class="circle"></div>
+        </div>
+
+        <div id="chat-icon" class="floating-icon" onclick="chat()">🗨️</div>
+        <script>
+            function chat() {
+                 window.location.href = '/user';
+                            }
+         </script>
+<!--- HEADER START-->
+
+        <header class="header" data-header>
+            <div class="container">
+                <a href="#" class="logo">
+                    <h1 >TOOTH <i>Care.</i></h1>
+                    
+                </a>
+
+                <nav class="navbar" data-navbar>
+            
+                    <ul class="navbar-list">
+                       <li class="navbar-item">
+                            
+                         </li>
+
+                        <li class="navbar-item">
+                           
+                        
+                    </li> 
+                        <li class="navbar-item">
+                           
+                                <button  onclick="userBlog()">Articles</button>
+
+                           
+                                <script>
+                                    function userBlog() {
+                                         window.location.href = '/userBlog';
+                                                    }
+                                 </script>
+                        </li>
+
+                        <li class="navbar-item">
+                         
+                                <button  onclick="userService()">Services</button>
+
+                           
+                                <script>
+                                    function userService() {
+                                         window.location.href = '/userService';
+                                                    }
+                                 </script>
+                        </li>
+
+                        <li class="navbar-item">
+                           
+                                <button  onclick="userDoctor()">Doctors</button>
+
+                           
+                                <script>
+                                    function userDoctor() {
+                                         window.location.href = '/userDoctor';
+                                                    }
+                                 </script>
+                        </li>
+
+                        <!-------nav bar----->
+
+                        <li class="navbar-item"> 
+
+                 <div class="dropdown">
+                    <button  onclick="toggleDropdown()" class="dropbtn">Login</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="/Userlogin">USER</a>
+                      <a href="/Stafflogin">STAFF</a>
+
+                      <!-- Add more options as needed -->
+                    </div>
+                  </div>
+                  
+
+
+                 
+              </li>
+                        <li
+                            style="display: none"
+                            id="logout_btn"
+                            class="navbar-item"
+                        >
+                            <a href="#" class="navbar-link title-md">
+                                <i class="fa-solid fa-right-from-bracket"
+                                    >&nbsp;Logout</i
+                                >
+                            </a>
+                        </li>
+
+                        <li id="chat" class="navbar-item">
+                           
+                            
+                            <div id="chat-icon" class="floating-icon" onclick="chat()">🗨️</div>
+                       
+                            <script>
+                                function chat() {
+                                    window.open('/user', '_blank');
+                                                }
+                             </script>
+
+                    </li>
+                    </ul>
+                </nav>
+                <button
+                    class="nav-open-btn"
+                    aria-label="open menu"
+                    data-nav-toggler
+                >
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+
+                <div class="overlay" data-nav-toggler data-overlay></div>
+            </div>
+        </header>
+
+<!--HEADER ENDS-->
+
+
+   <!--HOME START-->
+
+        <main>
+            <article>
+             
+
+              <section
+                    class="section hero"
+                  
+                    aria-label="home">
+
+                    <div class="container">
+                        <div class="hero-content">
+                            <h2 style="color: white;"
+                                class="animate__animated animate__headShake animate__slow animate__infinite"
+                                 class="hero-subtitle has-before"
+                                data-reveal="left">Welcome to ToothCare</h2>
+
+                            <h1
+                                class="headline-lg hero-title" 
+                                data-reveal="left"
+                                >
+                                Make An <br />Appointment.
+                            </h1>
+
+                         <div class="hero-card" data-reveal="left">
+                                
+        
+                                <div class="wrapper">
+
+                                        <!-- Button to navigate to the second page -->
+                             <button class="btn" onclick="navigateToSecondPage()">Click Here</button>
+
+                                        <!-- Include a script to handle navigation -->
+                             <script>
+                                  function navigateToSecondPage() {
+                                        window.location.href = '/add_appoint';
+                                        }
+                             </script>
+                                    
+                                </div>
+                            </div>
+
+
+                        </div>
+
+            <!--HOME BACKGROUND START-->
+                   <figure class="hero-banner" data-reveal="right">
+                            <img
+                                src="images/hero-banner.png"
+                                width="590"
+                                height="517"
+                                loading="eager"
+                                alt="hero banner"
+                                class="w-100"
+                            />
+                        </figure>
+             <!--HOME BACKGROUND ENDS-->
+
+                    </div>
+                </section> 
+
+        <!--HOME ENDS-->
+        
+
+            <!--- ABOUTUS START-->
+
+                <section class="section about" aria-labelledby="about-label">
+                    <div class="container">
+                        <div class="about-content">
+                            <h2  style="font-size: 28px; padding-bottom: 10px;"
+                                class="section-subtitle title-lg has-after"
+                                id="about-label"
+                                data-reveal="left">
+                                About Us</h2>
+
+                            <h2 class="headline-md" data-reveal="left">
+                                Your Smile, Our Priority: Excellence in Dental Wellness !
+                            </h2>
+
+                            <p class="section-text" data-reveal="left">
+                            <i>Elevate your smile with us!</i> <br> At ToothCare, 
+                            we prioritize excellence in dental wellness, 
+                            ensuring your confidence and health shine.
+                            <br>
+                            Our team is committed to providing personalized care that goes 
+                            beyond mere treatment - it's about nurturing your overall well-being
+                            </p>
+
+                            <p class="tab-text" data-reveal="left">
+                                There are many benefits to maintaining good
+                                dental care. Here are some of the key benefits
+                                of dental care:
+                            </p>
+
+                            <div class="wrapper">
+                                <ul class="about-list">
+                                    <li class="about-item" data-reveal="left">
+                                        <ion-icon
+                                            name="checkmark-circle-outline"
+                                        ></ion-icon>
+
+                                        <span class="span"
+                                            >Prevents tooth decay</span
+                                        >
+                                    </li>
+
+                                    <li class="about-item" data-reveal="left">
+                                        <ion-icon
+                                            name="checkmark-circle-outline"
+                                        ></ion-icon>
+
+                                        <span class="span"
+                                            >Promotes healthy gums</span
+                                        >
+                                    </li>
+
+                                    <li class="about-item" data-reveal="left">
+                                        <ion-icon
+                                            name="checkmark-circle-outline"
+                                        ></ion-icon>
+
+                                        <span class="span"
+                                            >Freshens breath</span
+                                        >
+                                    </li>
+
+                                    <li class="about-item" data-reveal="left">
+                                        <ion-icon
+                                            name="checkmark-circle-outline"
+                                        ></ion-icon>
+
+                                        <span class="span"
+                                            >Improves overall health</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+            <!--ABOUTUS IMAGE-->
+                 <figure class="about-banner" data-reveal="right">
+                            <img
+                                src="/images/about-banner.png"
+                                loading="lazy"
+                                alt="about banner"
+                                class="w-100"
+                            />
+                        </figure>
+            <!--ABOUTUS IMAGE-->
+
+                    </div>
+                </section>
+
+        <!--- ABOUTUS ENDS-->
+
+
+                <!--DOCTORS START-->
+                <section class="services section bd-container" id="services">
+                    <h2 class="section-title" style="font-size: 30px;">Meet Your Doctors</h2>
+
+                    <div class="services_container">
+                        <div class="services_content">
+                          
+<button class="bt" id="myLink" onclick="Docbutton1()"><img src="/images/doc1.PNG"></button>
+
+                           
+                                <script>
+                                    function Docbutton1() {
+                                         window.location.href = '/userDoctor';
+                                                    }
+                                 </script>
+                        
+
+                            <h3 class="services_title">Dr. Prachi Deval</h3>
+                            <p class="services_description">
+                                Introducing Dr. Prachi Deval, a distinguished Prosthodontist and Implantologist 
+                                based at DCH Colombo. Renowned for expertise in dentures, Geriatric Dentistry, 
+                                cosmetic procedures,aiding countless patients in reclaiming their beauty. With a wealth of research articles 
+                                published nationally, Dr. Prachi Deval stands as a beacon of excellence in the field.
+                            </p>
+                        </div>
+
+                        <div class="services_content">
+                            <button class="bt" id="myLink1" onclick="Docbutton2()"><img src="/images/doc2.jpg"></button>
+                            <script>
+                                function Docbutton2() {
+                                     window.location.href = '/userDoctor';
+                                                }
+                             </script>
+
+                            <h3 class="services_title">Dr. Rohan Nashikkar</h3>
+                            <p class="services_description">
+                                Dr. Rohan graduated from MGV Dental College in 2011. 
+                                Specializing in advanced endodontics and oral surgery, 
+                                he is dedicated to providing painless treatments and ensuring maximum patient comfort.
+                                 Alongside his dental expertise. As a former Teach For Sri Lanka international fellow, 
+                                 he brings a diverse range of experiences to his professional journey.
+                            </p>
+                        </div>
+
+                        <div class="services_content">
+                            <button class="bt" id="myLink2" onclick="Docbutton3()"><img src="/images/doc3.PNG"></button>
+                            <script>
+                                function Docbutton3() {
+                                     window.location.href = '/userDoctor';
+                                                }
+                             </script>
+                           
+
+                            <h3 class="services_title">Dr. Pinal Jain</h3>
+                            <p class="services_description">  
+                            Dr. Pinal Jain is a Periodontist with seven years of experience in these domains. 
+                            She earned her BDS from MGV Dental College, Nashik, in 2009, and her MDS in Periodontology and Implantology 
+                            from Sinhgad Dental College, Kandy, in 2015. Dr. Jain has numerous publications in both national and 
+                            international journals.Dr. Pinal Jain creating excellence in her field.
+                            </p>
+                        </div>
+
+                        <div class="services_content">
+                            <button class="bt" id="myLink3" onclick="Docbutton4()"><img src="/images/doc4.jpg"></button>
+                            <script>
+                                function Docbutton4() {
+                                     window.location.href = '/userDoctor';
+                                                }
+                             </script>
+                           
+                           
+
+                            <h3 class="services_title">Dr. Rahul Kumar</h3>
+                            <p class="services_description">  
+                            Dr. Rahul is a distinguished professional who earned his degree from SMC Dental College in 2009, 
+                            specializing in advanced endodontics and oral surgery. As a former Teach For Sri Lanka international fellow,His commitment to patient care is evident
+                             through his dedication to providing painless treatments and ensuring maximum comfort for every individual 
+                             under his care.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            <!--DOCTORS ENDS-->
+                
+        <!--BLOG START-->
+
+                <section class="section blog" aria-labelledby="blog-label">
+                    <div class="container">
+
+                        <h2
+                            class="section-title headline-md text-center"
+                            data-reveal="bottom"
+                        >
+                            Latest Articles
+                        </h2>
+
+                        <ul class="grid-list">
+                            <li>
+                                <div
+                                    class="blog-card has-before has-after"
+                                    data-reveal="bottom"
+                                >
+                                    <div class="meta-wrapper">
+                                        <div class="card-meta">
+                                            <ion-icon
+                                                name="person-outline"
+                                            ></ion-icon>
+
+                                            <span class="span">By Dr TINA</span>
+                                        </div>
+
+                                    </div>
+
+                                    <h3 class="headline-sm card-title">
+                                        Dental myths about dental braces
+                                    </h3>
+
+                                    <time
+                                        class="title-sm date"
+                                        datetime="2022-01-28"
+                                        >14 October, 2022</time
+                                    >
+
+                                    <p class="card-text">
+                                        Braces are only for children. Truth:
+                                        While it's true that most people get
+                                        braces during their teenage years,
+                                        adults can also benefit from braces...
+                                            <button class="bt" id="Link1" onclick="art1()">Read More</button>
+                            <script>
+                                function art1() {
+                                     window.location.href = '/userBlog';
+                                                }
+                             </script>
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div
+                                    class="blog-card has-before has-after"
+                                    data-reveal="bottom"
+                                >
+                                    <div class="meta-wrapper">
+                                        <div class="card-meta">
+                                            <ion-icon
+                                                name="person-outline"
+                                            ></ion-icon>
+
+                                            <span class="span"
+                                                >By Dr Jayesh</span
+                                            >
+                                        </div>
+
+                                    </div>
+
+                                    <h3 class="headline-sm card-title">
+                                        Regular Scaling vs Deep Scaling or Root
+                                        Planing
+                                    </h3>
+
+                                    <time
+                                        class="title-sm date"
+                                        datetime="2022-01-28"
+                                        >03 June, 2023</time
+                                    >
+
+                                    <p class="card-text">
+                                        Regular scaling and deep scaling or root
+                                        planing are two different types of
+                                        dental cleanings that serve different
+                                        purposes. Regular scaling is...
+                                    </p>
+                                    <button class="bt" id="Link1" onclick="art1()">Read More</button>
+                                    <script>
+                                        function art1() {
+                                             window.location.href = '/userBlog';
+                                                        }
+                                     </script>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div
+                                    class="blog-card has-before has-after"
+                                    data-reveal="bottom"
+                                >
+                                    <div class="meta-wrapper">
+                                        <div class="card-meta">
+                                            <ion-icon
+                                                name="person-outline"
+                                            ></ion-icon>
+
+                                            <span class="span"
+                                                >By DR RIHAN</span
+                                            >
+                                        </div>
+
+                                    </div>
+
+                                    <h3 class="headline-sm card-title">
+                                        Heres everything you need to know about
+                                        FMR!
+                                    </h3>
+
+                                    <time
+                                        class="title-sm date"
+                                        datetime="2022-01-28"
+                                        >28 January, 2022</time
+                                    >
+
+                                    <p class="card-text">
+                                        FMR is caused by a mutation in the FMR1
+                                        gene, which is responsible for producing
+                                        a protein that is important for normal
+                                        brain development...
+                                    </p>
+                                    <button class="bt" id="Link1" onclick="art1()">Read More</button>
+                                    <script>
+                                        function art1() {
+                                             window.location.href = '/userBlog';
+                                                        }
+                                     </script>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+        <!--BLOG ENDS-->
+
+        </main>
+       
+        
+    <!--FOOTER START-->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="section footer-top">
+                    <div class="footer-brand" data-reveal="bottom">
+                        <a href="#" class="logo">
+                            <h2>
+                                <span
+                                    ><i class="fa-solid fa-tooth"
+                                        >Toothcare</i
+                                    ></span
+                                >
+                            </h2>
+                        </a>
+
+                        <ul class="contact-list has-after">
+                            <li class="contact-item">
+                                <div class="item-icon">
+                                    <ion-icon
+                                        name="mail-open-outline"
+                                    ></ion-icon>
+                                </div>
+
+                                <div>
+                                    <p>
+                                        Main Email :
+                                        <a
+                                            href="mailto:contact@website.com"
+                                            class="contact-link"
+                                            >contact@toothcare.com</a
+                                        >
+                                    </p>
+
+                                    <p>
+                                        Inquiries :
+                                        <a
+                                            href="mailto:Info@mail.com"
+                                            class="contact-link"
+                                            >info@toothcare.com</a
+                                        >
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="item-icon">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </div>
+
+                                <div>
+                                    <p>
+                                        Office Telephone :
+                                        <a
+                                            href="tel:0029129102320"
+                                            class="contact-link"
+                                            >0135-24863976</a
+                                        >
+                                    </p>
+                                    <p>
+                                        Mobile :
+                                        <a
+                                            href="tel:000232439493"
+                                            class="contact-link"
+                                            >7900139615</a
+                                        >
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-list" data-reveal="bottom">
+                        <p class="headline-sm footer-list-title">Subscribe Us</p>
+
+                        <form action="/html/feedbackForm.html" class="footer-form">
+                            <input
+                                id="inputEmail"
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                class="input-field title-lg"
+                                required
+                            />
+
+                            <button
+                            id="feedbackButton"
+                                class="btn has-before title-md">Subscribe
+                            </button>
+                        </form>
+
+                        <p class="text">
+                            Get the latest updates via email. Any time you may
+                            unsubscribe
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="text copyright">
+                        &copy; Toothcare 2023 | All Rights Reserved
+                    </p>
+
+                    <ul class="social-list">
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-google"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-pinterest"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+<!--FOOTER ENDS-->
+
+
+        <!--- custom js link-->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       <script src="/script/home.js"></script>
+       <script src="script.js"></script>
+
+        <!--- ionicon link-->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+    </body>
+</html>

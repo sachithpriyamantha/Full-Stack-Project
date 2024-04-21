@@ -1,0 +1,38 @@
+<%- include('layout/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-info">
+                    <h3 class="text-light">Add New Services</h3>
+                </div>
+                <div class="card-body p-4 ">
+                    <form action="/addService" method="post" id="add-form" enctype="multipart/form-data">
+                        
+                        <div class="mb-4">
+                            <strong><label for="name">Title:</label></strong>
+                            <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter the Dental Service" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <strong><label for="desc">Description:</label></strong>
+                            <textarea name="desc" class="form-control form-control-lg" cols="4" rows="6" placeholder="Description"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                           <strong> <label for="image" class="form-label">Select Image</label></strong>
+                            <input class="form-control form-control-lg" type="file" name="image" required />
+                        </div>
+                        
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" value="Add Service" class="btn btn-info btn-lg" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>

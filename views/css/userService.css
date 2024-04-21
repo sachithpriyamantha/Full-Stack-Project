@@ -1,0 +1,41 @@
+
+body{
+  background-color: rgb(243, 249, 249) ;
+}
+
+.card {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 340px;
+  height: 400px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgb(226, 236, 242);
+}
+
+#title{
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+}
+
+h3{
+  color: rgb(63, 69, 71);
+}
+
+h2{
+  color: #3f82b3;
+}
+
+.btn{
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 10px;
+}

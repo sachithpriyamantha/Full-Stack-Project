@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>staffhome</title>
+	<link rel="stylesheet" href="css/dashstyle.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body> 
+
+    
+<div class="wrapper">
+    <div class="sidebar">
+        
+        <ul>
+            <li><a href="#"><i class="fas fa-user"></i>Staff Member</a></li>
+            <button class="btn" onclick="stafflogout()"><li><a href="#"><i class="fas fa-user"></i>Logout</a></li> </button>
+
+            <script>
+                function stafflogout() {
+                    window.location.href = '/Stafflogin';
+                }
+            </script>
+
+     
+        </ul> 
+    </div>
+
+    
+    <div class="main_content">
+        <div class="topnav">
+            
+          </div>
+          <br>
+        <h1 style="color:rgb(57, 116, 146);">Staff Menu</h1>
+        <br>
+        
+          <div class="flex-container">
+      
+        
+            <button onclick="appointView()">
+            <div class="flex-box">
+               <h5> Appointments Details</h5>
+                <img class="pictures" src="images/app.png" alt=" "> 
+            </div>
+            </button>
+
+            <script>
+                function appointView() {
+                    window.location.href = '/appointView';
+                }
+            </script>
+
+                <button onclick="patientView()">  
+                <div class="flex-box">
+                   <h5> Patients Details</h5>
+                    <img class="pictures" src="images/patienticon.png" alt=" " width="150" height="150">
+                </div>
+               </button>
+
+               <script>
+                function patientView() {
+                    window.location.href = '/patientView';
+                }
+            </script>
+
+
+            
+
+        </div>
+
+    </div>
+
+    
+</div>
+
+</body>
+</html>

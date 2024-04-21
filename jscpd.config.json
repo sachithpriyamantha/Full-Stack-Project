@@ -1,0 +1,13 @@
+{
+    "languages": ["javascript", "typescript"],
+    "path": ["src"],
+    "exclude": ["node_modules", "build"],
+    "format": ["javascript", "typescript"],
+    "minTokens": 50,
+    "blame": false,
+    "silent": false,
+    "ignoreCase": true,
+    "output": "./jscpd-report",
+    "threshold": 4.2
+  }
+  
